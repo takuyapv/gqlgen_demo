@@ -8,7 +8,9 @@
   * GORM
 * GraphQLライブラリ
   * gqlgen
-
+* データベース
+  * SQLite
+  
 ## セットアップ
 
 ```
