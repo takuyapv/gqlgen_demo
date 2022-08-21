@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "graphql": "^16.6.0",
+    "nuxt-graphql-request": "^5.2.0"
+  }
+}

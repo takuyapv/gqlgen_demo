@@ -1,0 +1,63 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+scalar Time
+
+type Todo {
+  id: ID!
+  text: String!
+  done: Boolean!
+  userId: String!
+  user: User!
+
+}
+
+type Schedule {
+  id: ID!
+  summary: String!
+  start: Time!
+  end: Time!
+}
+
+type User {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  todos: [Todo!]!
+  schedules(start: Time, end: Time): [Schedule!]!
+}
+
+input NewTodo {
+  text: String!
+  userId: String!
+}
+
+input NewSchedule {
+  summary: String!
+  start: Time!
+  end: Time!
+}
+
+input ScheduleId{
+  id: ID!
+}
+input ScheduleTime{
+  id: ID!
+  start: Time!
+  end: Time!
+}
+input ScheduleTitle{
+  id: ID!
+  summary: String!
+}
+
+type Mutation {
+  createTodo(input: NewTodo!): Todo!
+  createSchedule(input: NewSchedule ): Schedule!
+  deleteSchedule(input: ScheduleId ): Boolean!
+  modifySchedule(input: ScheduleTime ): Boolean!
+  modifyScheduleTitle(input: ScheduleTitle ): Boolean!
+}
